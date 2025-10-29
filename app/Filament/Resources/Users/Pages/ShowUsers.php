@@ -32,9 +32,11 @@ class ShowUsers extends Page
         );
     }
 
-    public function form(Form $form): Form
+    public array $data = [];
+
+    public function form(Schema $schema): Schema
     {
-        return $form
+        return $schema
             ->schema([
                 TextInput::make('name')->disabled(),
                 TextInput::make('email')->disabled(),
